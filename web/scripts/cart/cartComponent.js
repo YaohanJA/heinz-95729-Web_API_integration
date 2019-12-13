@@ -11,14 +11,16 @@ module.exports = {
       // shopping cart UI code from:https://bootsnipp.com/snippets/yP7qe, by asanti82
       template: `
       <div class="container">
-        <table id="cart" class="table table-hover table-condensed cart-component">
+        <h2 class='text-center'> Your Shopping Cart </h2>
+        <hr />
+        <table id="cart" class="table table-dark">
           <thead>
             <tr>
-              <th style="width:50%">Product</th>
+              <th style="width:45%">Product</th>
               <th style="width:10%">Price</th>
               <th style="width:8%">Quantity</th>
               <th style="width:22%" class="text-center">Subtotal</th>
-              <th style="width:10%"></th>
+              <th style="width:15%"></th>
             </tr>
           </thead>
           <tbody>
@@ -42,7 +44,7 @@ module.exports = {
             </tr>
           </tbody>
           <tfoot>
-            <tr class="visible-xs">
+            <tr class="d-sm-none">
               <td class="text-center"<strong>Total {{total}}</strong></td>
             </tr>
             <tr>
@@ -57,10 +59,10 @@ module.exports = {
 
       `,
       beforeMount() {
-        var video = document.getElementsByTagName("video")[0];
-        video.style.display = 'block';
-        var header = document.getElementsByTagName("header")[0];
-        header.style.display = 'block';
+        // var video = document.getElementsByTagName("video")[0];
+        // video.style.display = 'block';
+        // var header = document.getElementsByTagName("header")[0];
+        // header.style.display = 'block';
       },
       data: () => {
         state = new Cart()

@@ -13,15 +13,28 @@ module.exports = {
     const component = Vue.component('history', {
       template: `
         <div class="history-component">
-          <div class="row text-center">
-          <div class="heading"> <h2>User Profile</h2> </div>
-          <div class ="details"><span class="label"><h3>Name:</h3></span> <h3>{{name}} </h3></div>
-          <div class ="details"><span class="label"><h3>Email:</h3></span><h3> {{email}}</h3></div>
-          <div class="btn-panel">
-          <a class="btn btn-success view" href="/userproducts"> View History </a>
-          <button class="btn btn-success logout" v-on:click="logout">Log out</button>
+          
+          <h2 class='text-center'>User Profile</h2> 
+          <hr />
+
+          <table class="table">
+            <tr>
+            <td>Name</td>
+            <td>{{ name }}</td>
+            </tr>
+            <tr>
+            <td>Email</td>
+            <td> {{ email }}</td>
+            </tr>
+            <tr>
+            <td><a class="btn btn-success view" href="/userproducts"> View History </a></td>
+            <td colspan='1'><button class="btn btn-warning logout" v-on:click="logout">Log out</button></td>
+            </tr>
+          </table>
+         
+          
           </div>
-          </div><!-- /row -->
+         
         </div><!-- /component -->`,
       data: () => {
         return state

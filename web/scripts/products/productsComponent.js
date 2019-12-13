@@ -10,29 +10,38 @@ module.exports = {
     const component = Vue.component('products', {
       template: `
         <div class="products-component">
+          <h2 class="text-center"> All Books </h2>
+          <hr />
           <div class="row">
-            <div v-for="product in products">
-              <div class="col-sm-6 col-md-4 product-col">
+              <div class="col-sm-6 col-md-4 product-col" v-for="product in products">
                 <div class="thumbnail">
                   <a class="thumbnail-img" href="javascript:void(0);" v-on:click="product.viewDetails">
                     <img :src="product.thumbnailLink" :alt="product.thumbnailAlt">
                   </a>
-
                   <div class="caption">
-                    <h3><a href="javascript:void(0);" v-on:click="product.viewDetails">{{product.title}}</a></h3>
-                    <div class="description">{{product.description}}</div>
-                    <div class="overlay"></div>
+                    <h6><a href="javascript:void(0);" v-on:click="product.viewDetails">{{product.title}}</a></h6>
+                    <div class="description">{{product.description | truncate(120)}}</div>
                     <label>$ {{product.price}}</label>
-                    <a class="buy-now fa fa-shopping-cart" href="javascript:void(0);" v-on:click="product.addToCart"></a>
+                    <a class="btn btn-sm btn-warning buy-now" href="javascript:void(0);" v-on:click="product.addToCart">
+                    <i class="fa fa-shopping-cart"> Add</i>
+                    </a>
                   </div>
                 </div>
               </div>
-            </div> <!-- /products -->
           </div><!-- /row -->
         </div><!-- /component -->`,
       data: () => {
         return state
       },
+      filters: {
+        truncate: function (value, limit) {
+          if (value.length > limit) {
+            value = value.substring(0, (limit - 3)) + '...';
+        }
+    
+        return value
+        }
+      }
     })
 
     const setProducts = (searchResults) => {
