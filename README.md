@@ -1,8 +1,35 @@
-# CMU Heinz 95729 Course Project (2017)
 
-This repository provides a foundation for Heinz 95729 E-Commerce Tech course projects that include APIs, and/or web apps.
 
-## Getting Started
+<img src="header.png " width="800" height="300">
+
+# CMU-heinz-95729-project
+
+This repository provides a foundation for CMU Heinz 95729 E-Commerce Tech course projects that include APIs, and/or web apps.
+
+- Team Member:
+  - [Peter Yefi](https://github.com/peteryefi)
+
+  - [Shomona Mukherjee](https://github.com/Shomona)
+
+  - [Yaohan Jiang](https://github.com/YaohanJA)
+
+  - [Mengyue Wu](https://github.com/menyw)
+
+
+
+## Project Objective
+
+- Users can modify books to the shopping cart and review the shopping cart
+- Users can check out (with Stripe) and download the e-book (PDF) after purchasing
+- Users can see the order history
+
+### Project Deliverable
+
+A book store website with shopping cart functionality, check out system and order history.
+
+
+
+# Getting Started
 
 1. Make sure you have NodeJS installed
 1. Make sure you have MongoDB installed and running
@@ -39,3 +66,6 @@ $ cd cui
 $ npm install
 $ npm start
 ```
+
+
+
